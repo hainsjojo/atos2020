@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<!-- Full Page Image Header with Vertically Centered Content -->
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+        <h1 class="font-weight-light">Search for a person and their path</h1>
+        <p class="lead">Enter a known encrypted value of a device's MAC Address</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Page Content -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="font-weight-light">            
+      <form class="form-inline" method="POST">   
+  
+      {% csrf_token %}
+      {{ search }}
+      {{ mac_list }}
+
+      <button type="submit"  class="btn btn-primary">Submit</button>
+    
+        </form></h2>
+        <div class="container">
+    </br>
+    <h4>Times found of person:</h4>
+    <p>{{ time_found }}</p>
+  </br>
+  <p>This will show all the time stamps that can be found of the searched person in this area.</p>
+  </div>
+  </div>
+</section>
+
+
+
+ <div class='container'>
+<a href="/account/" class="btn btn-success" role="button" >Dashboard</a>
+</div>
+</body>
+</html>
