@@ -8,7 +8,7 @@ future = df.tail(1000)
 future = future.drop('y', axis=1)
 #drop last 1000 value from the actuals
 df.drop(df.tail(1000).index,inplace=True)
-m = Prophet(weekly_seasonality=False)
+m = Prophet(weekly_seasonality=True)
 m.add_seasonality(name='hourly', period=1000, fourier_order=3)
 m.fit(df) # Fit the model
 forecast = m.predict(future)
