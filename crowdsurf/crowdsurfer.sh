@@ -13,9 +13,9 @@ if [[ $? != 0 ]]; then
 	exit 1
 fi
 
-sudo rm /root/crowdsurf/out/raw-01.csv 2>/dev/null # replace location from line 5
+sudo rm /root/atos2020/crowdsurf/out/raw-01.csv 2>/dev/null # replace location from line 5
 mkdir out 2>/dev/null
-xterm -hold -e sudo airodump-ng mon0 -w /root/crowdsurf/out/raw -o csv & #set location to store csv file
+xterm -hold -e sudo airodump-ng mon0 -w /root/atos2020/crowdsurf/out/raw -o csv & #set location to store csv file
 
 cp devicemacs.txt currentmac.txt
 
