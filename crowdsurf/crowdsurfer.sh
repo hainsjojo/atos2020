@@ -107,6 +107,7 @@ if [ $counter -ge 2 ];then
 	done
 	cp macdb.csv /var/www/html
 	cp dataset.csv /var/www/html
+	cp dataset.csv ~/atos2020/prophet/
 	echo "$str $str Final $str Time:$timestamp,$str Number of devices: $tn"  # Prints out the current status
 	pkill -f xterm
 fi
